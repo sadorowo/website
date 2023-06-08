@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap');
+
+:root {
+    --size: 100px;
+}
+
+body {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+#content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: ease-in 0.2s;
+}
+
+#content {
+    opacity: 0
+}
+
+#content h4 {
+    color: #ffd9a4;
+    text-transform: uppercase;
+}
+
+a {
+    color: #000;
+    text-decoration-color: #000;
+    display: inline-block;
+    transition: ease-in 0.2s;
+}
+
+#box {
+    z-index: 1;
+    opacity: 0;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    background-color: #000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: ease-in 0.2s;
+    animation: toRight linear 6.8s infinite alternate, bounce linear 17s infinite alternate;
+
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+#box p {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(96, 77, 199);
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    transition: ease-in 0.2s;
+    color: #fff;
+}
+
+button:hover {
+    background-color: rgba(96, 77, 199, 0.6);
+}
+
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    border: none;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    background-color: rgb(101, 44, 255);
+    font-family: 'Geologica', sans-serif;
+    font-weight: 400;
+    transition: ease-in 0.2s;
+    color: #fff;
+}
+
+.social:hover {
+    background-color: rgb(78, 31, 208);
+}
+
+.social p {
+    color: #000;
+    margin: 10px 0 10px 0;
+}
+
+.social img {
+    width: auto;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social, button {
+    margin-bottom: 5px;
+}
+
+#points span {
+    color: lime;
+    font-size: 125%;
+}
+
+#projects {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+
+    border-radius: 10px;
+    transition: ease-in 0.2s;
+    position: relative;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.project-card img {
+    border-radius: 10px;
+    margin: 0;
+}
+
+.project-card .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card .description * {
+    transition: ease-in 0.2s;
+}
+
+.project-card .description * {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    color: #000;
+}
+
+.project-card:hover > .description *:not(a) {
+    opacity: 0;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: calc(100% - var(--size));
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes toRight {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: calc(100% - var(--size));
+    }
+}
+
+/* DARK THEME */
+body.dark {
+    background-color: #2f3136;
+}
+
+body.dark #box {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+}
+
+body.dark #box p {
+    color: #000;
+}
+
+body.dark #content {
+    color: #fff;
+}
+
+body.dark .social p {
+    color: #fff;
+}
+
+body.dark a {
+    color: #fff;
+    text-decoration-color: #fff;
+}
+
+body.dark .project-card .description * {
+    background-color: #b4b4b4;
+}
+
+body.dark *[data-only-light] {
+    display: none;
+}
+
+body:not(.dark) .project-card {
+    background-color: rgb(185, 175, 255);
+}
+
+body:not(.dark) *[data-only-dark] {
+    display: none;
+}
+
+body:not(.dark) .social {
+    background-color: rgb(185, 175, 255);
+}
+
+body:not(.dark) .social:hover {
+    background-color: rgb(132, 125, 189);
+}
+
+body:not(.dark) #content h4 {
+    color: #000;
+}
+
+/* MOBILE */
+@media screen and (max-width: 798px) {
+    #content {
+        display: block;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    #projects {
+        flex-direction: column;
+    }
+}
