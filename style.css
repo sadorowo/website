@@ -235,16 +235,12 @@ body.dark .project-card .description * {
     background-color: #b4b4b4;
 }
 
-body.dark *[data-only-light] {
-    display: none;
-}
-
 body:not(.dark) .project-card {
     background-color: rgb(185, 175, 255);
 }
 
-body:not(.dark) *[data-only-dark] {
-    display: none;
+body:not(.dark) #socials .social img {
+    filter: invert();
 }
 
 body:not(.dark) .social {
