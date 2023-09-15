@@ -1,4 +1,5 @@
 const contentContainer = document.getElementById('content');
+const ageElement = document.getElementById('age');
 const points = document.getElementById('points');
 
 const box = document.getElementById('box');
@@ -48,10 +49,12 @@ window.onload = async () => {
     await updateOpacity(contentContainer, true);
 }
 
-// update age
-const difference = (Date.now() - 1182722400000) / (1000 * 60 * 60 * 24 * 365);
-document.getElementById('age').innerText = difference.toFixed(4);
-
 // update theme
 if (currentTheme === 'dark')
     document.body.classList.add('dark');
+
+// update age
+if (typeof ageElement !== 'undefined') {
+    const difference = (Date.now() - 1182722400000) / (1000 * 60 * 60 * 24 * 365);
+    ageElement.innerText = difference.toFixed(4);
+}
