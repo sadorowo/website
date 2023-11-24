@@ -155,9 +155,12 @@ button a {
 
 .project-card img {
     border-radius: 10px;
-    width: 200px;
     height: 200px;
     margin: 0;
+}
+
+.project-card img[data-abandoned] {
+    filter: grayscale();
 }
 
 .project-card .description {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +10,40 @@
     <script defer src="script.js"></script>
     <title>sador.me - projekty</title>
 </head>
+
 <body>
     <div id="content">
         <h1>Sador</h1>
         <button onclick="toggleTheme()">Zmień motyw</button>
         <button><a href="/">Powrót</a></button>
         <h4>Moje projekty</h4>
+        <p>Opuszczone projekty mają czarno-białe zdjęcie tła!</p>
         <div id="projects">
             <div class="project-card">
-                <img src="thumbnails/zine.png" alt="Zine thumbnail"/>
+                <img src="thumbnails/zine.png" alt="Zine thumbnail" data-abandoned />
                 <div class="description">
                     <h3>Zine</h3>
-                    <p>Mój własny bot na platformy Guilded&Discord napisany w języku Rust. (Projekt porzucony)</p>
+                    <p>Mój własny bot na platformy Guilded&Discord napisany w języku Rust.</p>
                 </div>
             </div>
             <div class="project-card">
-                <img src="thumbnails/website.png" alt="Website thumbnail"/>
+                <img src="thumbnails/website.png" alt="Website thumbnail" />
                 <div class="description">
                     <h3>Personalna strona</h3>
                     <p>Moja własna strona internetowa, ta, którą teraz przeglądasz.</p>
                 </div>
             </div>
-            <div class="project-card">
-                <img src="thumbnails/witch_website.png" alt="Witch website thumbnail"/>
-                <div class="description">
-                    <h3>Strona o...</h3>
-                    <p>Jeden z wielu szkolnych projektów, hostowany na GitHub Pages.</p>
+            <a href="https://witch.sador.me/">
+                <div class="project-card">
+                    <img src="thumbnails/witch_website.png" alt="Witch website thumbnail" />
+                    <div class="description">
+                        <h3>Strona o...</h3>
+                        <p>Jeden z wielu szkolnych projektów, hostowany na GitHub Pages.</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
 </body>
+
 </html>
