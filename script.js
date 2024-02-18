@@ -1,4 +1,7 @@
+const rightSideContainer = document.getElementById('right-side');
 const contentContainer = document.getElementById('content');
+
+const swapButton = document.getElementById('swap');
 const ageElement = document.getElementById('age');
 const points = document.getElementById('points');
 
@@ -15,7 +18,7 @@ async function updateOpacity(block, show) {
         await wait(0.3);
         block.style.display = 'none';
     } else {
-        block.style.display = 'block';
+        block.style.display = 'flex';
         await wait(0.3);
         block.style.opacity = '1';
     }
@@ -35,6 +38,11 @@ function resetPoints() {
     boxPoints.textContent = bonusPoints;
 }
 
+function swapContent() {
+    contentContainer.style.flexDirection = 
+        contentContainer.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse';
+}
+
 // listeners
 if (box) box.addEventListener('click', () => {
     bonusPoints++;
@@ -46,7 +54,7 @@ window.onload = async () => {
     if (boxPoints) boxPoints.textContent = bonusPoints;
     if (box) await updateOpacity(box, true);
 
-    await updateOpacity(contentContainer, true);
+    await updateOpacity(rightSideContainer, true);
 }
 
 // update theme
@@ -54,7 +62,9 @@ if (currentTheme === 'dark')
     document.body.classList.add('dark');
 
 // update age
-if (typeof ageElement !== 'undefined') {
+if (ageElement) {
     const difference = (Date.now() - 1182722400000) / (1000 * 60 * 60 * 24 * 365);
     ageElement.innerText = difference.toFixed(4);
 }
+
+swapButton.addEventListener('click', swapContent);

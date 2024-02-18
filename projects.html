@@ -13,44 +13,50 @@
 
 <body>
     <div id="content">
-        <h1>Sador</h1>
-        <button onclick="toggleTheme()">Zmień motyw</button>
-        <button><a href="/">Powrót</a></button>
-        <h4>Moje projekty</h4>
-        <p>Opuszczone projekty mają czarno-białe zdjęcie tła!</p>
-        <div id="projects">
-            <div class="project-card">
-                <img src="thumbnails/zine.png" alt="Zine thumbnail" data-abandoned />
-                <div class="description">
-                    <h3>Zine</h3>
-                    <p>Mój własny bot na platformy Guilded&Discord napisany w języku Rust.</p>
-                </div>
-            </div>
-            <div class="project-card">
-                <img src="thumbnails/website.png" alt="Website thumbnail" />
-                <div class="description">
-                    <h3>Personalna strona</h3>
-                    <p>Moja własna strona internetowa, ta, którą teraz przeglądasz.</p>
-                </div>
-            </div>
-            <a href="https://witch.sador.me/">
+        <div id="left-side">
+            <h1>Sador</h1>
+            <button onclick="toggleTheme()">Zmień motyw</button>
+            <button><a href="/">Powrót</a></button>
+            <button id="swap">Odwróć strony :)</button>
+        </div>
+        <div id="right-side">
+            <h4>Moje projekty</h4>
+            <p>Opuszczone projekty mają czarno-białe zdjęcie tła!</p>
+            <div id="projects">
                 <div class="project-card">
-                    <img src="thumbnails/witch_website.png" alt="Witch website thumbnail" />
+                    <img src="thumbnails/zine.png" alt="Zine thumbnail" data-abandoned />
                     <div class="description">
-                        <h3>Strona o...</h3>
-                        <p>Jeden z wielu szkolnych projektów, hostowany na GitHub Pages.</p>
+                        <h3>Zine</h3>
+                        <p>Mój własny bot na platformy Guilded&Discord napisany w języku Rust.</p>
                     </div>
                 </div>
-            </a>
-            <a href="https://sadorowo.github.io/draw">
                 <div class="project-card">
-                    <img src="thumbnails/draw.png" alt="Draw website thumbnail" />
+                    <img src="thumbnails/website.png" alt="Website thumbnail" />
                     <div class="description">
-                        <h3>Strona do rysowania</h3>
-                        <p>Szkolny projekt. Na tej stronie możesz narysować to, co Ci się tylko podoba. Na chwilę obecną nie jest hostowana na mojej domenie.</p>
+                        <h3>Personalna strona</h3>
+                        <p>Moja własna strona internetowa, ta, którą teraz przeglądasz.</p>
                     </div>
                 </div>
-            </a>
+                <a href="https://witch.sador.me/">
+                    <div class="project-card">
+                        <img src="thumbnails/witch_website.png" alt="Witch website thumbnail" />
+                        <div class="description">
+                            <h3>Strona o...</h3>
+                            <p>Jeden z wielu szkolnych projektów, hostowany na GitHub Pages.</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://sadorowo.github.io/draw">
+                    <div class="project-card">
+                        <img src="thumbnails/draw.png" alt="Draw website thumbnail" />
+                        <div class="description">
+                            <h3>Strona do rysowania</h3>
+                            <p>Szkolny projekt. Na tej stronie możesz narysować to, co Ci się tylko podoba. Na chwilę
+                                obecną nie jest hostowana na mojej domenie.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </body>

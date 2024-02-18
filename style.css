@@ -4,30 +4,52 @@
     --size: 100px;
 }
 
+html {
+    height: 100vh;
+}
+
+body {
+    min-height: 100vh;
+}
+
 body {
     font-family: 'Geologica', sans-serif;
     font-weight: 700;
-    width: 100%;
-    height: 100%;
     margin: 0;
 }
 
 #content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-    max-width: 100%;
-    max-height: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+#content>* {
+    padding: 20px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#left-side {
+    background-color: #ffd9a4;
+    text-align: center;
+}
+
+#right-side {
     transition: ease-in 0.2s;
 }
 
-#content {
+#right-side {
     opacity: 0
 }
 
-#content h4 {
+#right-side h4 {
     color: #ffd9a4;
     text-transform: uppercase;
 }
@@ -121,12 +143,13 @@ button a {
     margin-right: 10px;
 }
 
-.social, button {
+.social,
+button {
     margin-bottom: 5px;
 }
 
 #points span {
-    color: lime;
+    color: #6c3877;
     font-size: 125%;
 }
 
@@ -145,6 +168,7 @@ button a {
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
+    border: 1px solid #000;
 
     border-radius: 10px;
     transition: ease-in 0.2s;
@@ -169,7 +193,6 @@ button a {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -182,13 +205,13 @@ button a {
 
 .project-card .description * {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
     margin: 10px;
     color: #000;
 }
 
-.project-card:hover > .description *:not(a) {
+.project-card:hover>.description *:not(a) {
     opacity: 0;
 }
 
@@ -230,7 +253,7 @@ body.dark #box p {
     color: #000;
 }
 
-body.dark #content {
+body.dark #right-side {
     color: #fff;
 }
 
@@ -241,6 +264,10 @@ body.dark .social p {
 body.dark a {
     color: #fff;
     text-decoration-color: #fff;
+}
+
+body.dark .project-card {
+    border: 1px solid #ffd9a4;
 }
 
 body.dark .project-card .description * {
@@ -263,7 +290,7 @@ body:not(.dark) .social:hover {
     background-color: rgb(132, 125, 189);
 }
 
-body:not(.dark) #content h4 {
+body:not(.dark) #right-side h4 {
     color: #000;
 }
 
@@ -275,5 +302,19 @@ body:not(.dark) #age {
 @media screen and (max-width: 798px) {
     #projects {
         flex-direction: column;
+    }
+
+    #content {
+        flex-direction: column;
+        height: unset;
+    }
+
+    #content>* {
+        padding: 0;
+    }
+
+    #left-side {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 }
