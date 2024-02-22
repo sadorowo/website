@@ -22,7 +22,7 @@ async function updateOpacity(block, show) {
         await wait(0.3);
         block.style.opacity = '1';
     }
- 
+
     block.classList.toggle('visible');
 }
 
@@ -39,8 +39,13 @@ function resetPoints() {
 }
 
 function swapContent() {
-    contentContainer.style.flexDirection = 
-        contentContainer.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse';
+    if (window.innerWidth < 768) {
+        contentContainer.style.flexDirection =
+            contentContainer.style.flexDirection === 'column-reverse' ? 'column' : 'column-reverse';
+    } else {
+        contentContainer.style.flexDirection =
+            contentContainer.style.flexDirection === 'row-reverse' ? 'row' : 'row-reverse';
+    }
 }
 
 // listeners
