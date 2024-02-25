@@ -23,12 +23,10 @@ body {
     align-items: stretch;
     justify-content: center;
     flex-direction: row;
-    width: 100vw;
     min-height: 100vh;
 }
 
 #content>* {
-    padding: 20px;
     width: 100vw;
     display: flex;
     align-items: center;
