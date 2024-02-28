@@ -4,10 +4,6 @@
     --size: 100px;
 }
 
-html {
-    height: 100vh;
-}
-
 body {
     min-height: 100vh;
 }
@@ -23,11 +19,13 @@ body {
     align-items: stretch;
     justify-content: center;
     flex-direction: row;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
 }
 
 #content>* {
-    width: 100vw;
+    overflow-y: auto;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -213,6 +211,53 @@ button {
     opacity: 0;
 }
 
+.accordion {
+    width: 100%;
+    background-color: #ffb54c;
+    padding: 10px 0 10px 0;
+    cursor: pointer;
+    transition: ease-in 0.2s;
+}
+
+.accordion.active, .accordion:hover {
+    background-color: #fffdcc;
+}
+
+.accordion p {
+    text-align: center;
+    margin: 0;
+}
+
+.accordion>p::after {
+    content: '▼';
+    margin-left: 5px;
+}
+
+.accordion.active>p::after {
+    content: '▲';
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px 0 10px 0;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.accordion-content > *:is(ol, ul) {
+    list-style-type: none;
+}
+
+.accordion-content > *:is(ol, ul) li::before {
+    content: '•';
+    margin: 0 5px 0 5px;
+}
+
+.accordion.active>.accordion-content {
+    display: block;
+}
+
+/* ANIMATIONS */
 @keyframes bounce {
     0% {
         top: 0;
@@ -320,5 +365,9 @@ body:not(.dark) #age {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #box {
+        display: none;
     }
 }

@@ -73,3 +73,21 @@ if (ageElement) {
 }
 
 swapButton.addEventListener('click', swapContent);
+
+const accordions = document.querySelectorAll('.accordion');
+
+function closeOtherAccordions(accordion) {
+    accordions.forEach(acc => {
+        if (acc !== accordion)
+            acc.classList.remove('active');
+    });
+}
+
+function openAccordion(accordion) {
+    closeOtherAccordions(accordion);
+    accordion.classList.toggle('active');
+}
+
+accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => openAccordion(accordion));
+});
