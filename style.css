@@ -213,14 +213,14 @@ button {
 
 .accordion {
     width: 100%;
-    background-color: #ffb54c;
+    background-color: #ffd9a4;
     padding: 10px 0 10px 0;
     cursor: pointer;
     transition: ease-in 0.2s;
 }
 
 .accordion.active, .accordion:hover {
-    background-color: #fffdcc;
+    background-color: #ffb752;
 }
 
 .accordion p {
@@ -323,6 +323,10 @@ body:not(.dark) .project-card {
 
 body.dark #socials .social img {
     filter: invert();
+}
+
+body.dark .accordion {
+    color: #000;
 }
 
 body:not(.dark) .social {
