@@ -1,53 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap');
 
 :root {
+    --info-height: 40px;
     --size: 100px;
+    --columns: 3;
 }
 
-body {
-    min-height: 100vh;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
 body {
     font-family: 'Geologica', sans-serif;
+    text-align: center;
     font-weight: 700;
     margin: 0;
+}
+
+#top-bar {
+    background-color: #a4aaff;
+    text-align: center;
+    position: fixed;
+    color: #fff;
+    z-index: 1;
+    width: 100%;
+    margin: 0;
+
+    line-height: var(--info-height);
+    height: var(--info-height);
 }
 
 #content {
     display: flex;
     align-items: stretch;
-    justify-content: center;
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
 #content>* {
     overflow-y: auto;
-    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+
+    transition: ease-in-out 0.3s;
 }
 
-#left-side {
+#content>div {
+    margin-top: var(--info-height);
+}
+
+#content>*[data-closed="true"] {
+    width: 20%;
+    cursor: pointer;
     background-color: #ffd9a4;
-    text-align: center;
 }
 
-#right-side {
-    transition: ease-in 0.2s;
+#content>*[data-closed="true"] * {
+    filter: grayscale();
 }
 
-#right-side {
-    opacity: 0
-}
-
-#right-side h4 {
-    color: #ffd9a4;
-    text-transform: uppercase;
+#content>*[data-closed="false"] {
+    width: calc(100% - calc((var(--columns) - 1) * 20%))
 }
 
 a {
@@ -224,7 +240,6 @@ button {
 }
 
 .accordion p {
-    text-align: center;
     margin: 0;
 }
 
@@ -241,7 +256,6 @@ button {
     display: none;
     padding: 10px 0 10px 0;
     border-radius: 10px;
-    text-align: center;
 }
 
 .accordion-content > *:is(ol, ul) {
@@ -296,8 +310,16 @@ body.dark #box p {
     color: #000;
 }
 
-body.dark #right-side {
+body.dark #content > *[data-closed="false"] {
     color: #fff;
+}
+
+body.dark #content #age {
+    color: #ffd9a4;
+}
+
+body.dark #content>*[data-closed="true"] #age {
+    color: #2f3136;
 }
 
 body.dark .social p {
@@ -337,7 +359,7 @@ body:not(.dark) .social:hover {
     background-color: rgb(132, 125, 189);
 }
 
-body:not(.dark) #right-side h4 {
+body:not(.dark) #content>* {
     color: #000;
 }
 
@@ -360,11 +382,6 @@ body:not(.dark) #age {
         padding: 0;
     }
 
-    #left-side {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
-
     #socials {
         display: flex;
         flex-direction: column;
@@ -372,6 +389,32 @@ body:not(.dark) #age {
     }
 
     #box {
-        display: none;
+        display: none !important;
+    }
+
+    #content>*[data-closed="true"] {
+        width: auto;
+        cursor: auto;
+        background-color: unset;
+    }
+    
+    #content>*[data-closed="true"] * {
+        filter: none;
+    }
+    
+    #content>*[data-closed="false"] {
+        width: 100%;
+    }
+
+    #top-bar {
+        line-height: normal;
+    }
+
+    body.dark #content>* {
+        color: #fff;
+    }
+
+    body.dark #content>*[data-closed="true"] #age {
+        color: unset;
     }
 }

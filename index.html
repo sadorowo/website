@@ -16,7 +16,8 @@
         <p>Kliknij mnie!</p>
     </div>
     <div id="content">
-        <div id="left-side">
+        <p id="top-bar">Aby zamknąć bądź otworzyć daną kolumnę, kliknij w jej tło.</p>
+        <div data-closed="false">
             <h1>Sador</h1>
             <h2 id="points">Bonusowe punkty z minigry: <span>0</span></h2>
             <button onclick="resetPoints()">Resetuj punkty</button>
@@ -24,7 +25,7 @@
             <button><a href="projects.html">Moje projekty</a></button>
             <button id="swap">Odwróć strony :)</button>
         </div>
-        <div id="right-side">
+        <div data-closed="true">
             <h4>Media społecznościowe/moje konta</h4>
             <div id="socials">
                 <a class="social" href="https://github.com/sadorowo" target="_blank">
@@ -50,6 +51,61 @@
                 <li>elektronika</li>
                 <li>muzyka</li>
             </ul>
+            <p>sprzęt/oprogramowanie, który posiadam:</p>
+            <div class="accordion">
+                <p>sprzęt</p>
+                <div class="accordion-content">
+                    <ul>
+                        <li>CPU: Intel i5-4590</li>
+                        <li>GPU: NVIDIA GTX 970 + Radeon RX 5500 XT</li>
+                        <li>Bluetooth: CSR 4.0</li>
+                        <li>Wi-Fi: TP-LINK TL-WN722N V2</li>
+                        <li>Klawiatura: Microsoft All-In-One Media Keyboard</li>
+                        <li>Mysz: coś z defendera :)</li>
+                        <li>Słuchawki: Beats Studio Buds</li>
+                        <li>Monitor: LG M2450D</li>
+                        <li>Płyta główna: ASRock H97M Pro4</li>
+                        <li>RAM: 16GB DDR3</li>
+                        <li>Dysk: ADATA 500GB</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion">
+                <p>systemy operacyjne</p>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Hackintosh Sonoma</li>
+                        <li>Windows 10 Pro</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion">
+                <p>oprogramowanie</p>
+                <div class="accordion-content">
+                    <ul>
+                        <li>DaVinci Resolve</li>
+                        <li>Firefox</li>
+                        <li>GIMP</li>
+                        <li>OBS Studio</li>
+                        <li>Handbrake</li>
+                        <li>VSC (only product from ms trash that I'm using LMAO)</li>
+                        <li>BitTorrent Web</li>
+                        <li>Apple Music</li>
+                        <li>JetBrains IDEs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="accordion">
+                <p>subskrypcje</p>
+                <div class="accordion-content">
+                    <ul>
+                        <li>Apple Music Individual</li>
+                    </ul>
+                </div>
+            </div>
+            <p>cenię sobie prywatność, nie korzystam m.in. z facebooka, wyszukiwarki google.</p>
+        </div>
+        <div data-closed="true">
             <p>jestem fanem/po prostu słucham:</p>
             <div class="accordion">
                 <p>metalu</p>
@@ -108,59 +164,6 @@
                     </ul>
                 </div>
             </div>
-            <p>sprzęt/oprogramowanie, który posiadam:</p>
-            <div class="accordion">
-                <p>sprzęt</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>CPU: Intel i5-4590</li>
-                        <li>GPU: NVIDIA GTX 970 + Radeon RX 5500 XT</li>
-                        <li>Bluetooth: CSR 4.0</li>
-                        <li>Wi-Fi: TP-LINK TL-WN722N V2</li>
-                        <li>Klawiatura: Microsoft All-In-One Media Keyboard</li>
-                        <li>Mysz: coś z defendera :)</li>
-                        <li>Słuchawki: Beats Studio Buds</li>
-                        <li>Monitor: LG M2450D</li>
-                        <li>Płyta główna: ASRock H97M Pro4</li>
-                        <li>RAM: 16GB DDR3</li>
-                        <li>Dysk: ADATA 500GB</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>systemy operacyjne</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Hackintosh Sonoma</li>
-                        <li>Windows 10 Pro</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>oprogramowanie</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>DaVinci Resolve</li>
-                        <li>Firefox</li>
-                        <li>GIMP</li>
-                        <li>OBS Studio</li>
-                        <li>Handbrake</li>
-                        <li>VSC (only product from ms trash that I'm using LMAO)</li>
-                        <li>BitTorrent Web</li>
-                        <li>Apple Music</li>
-                        <li>JetBrains IDEs</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>subskrypcje</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Apple Music Individual</li>
-                    </ul>
-                </div>
-            </div>
-            <p>cenię sobie prywatność, nie korzystam m.in. z facebooka, wyszukiwarki google.</p>
         </div>
     </div>
 </body>

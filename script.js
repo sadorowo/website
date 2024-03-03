@@ -1,4 +1,3 @@
-const rightSideContainer = document.getElementById('right-side');
 const contentContainer = document.getElementById('content');
 
 const swapButton = document.getElementById('swap');
@@ -58,8 +57,6 @@ if (box) box.addEventListener('click', () => {
 window.onload = async () => {
     if (boxPoints) boxPoints.textContent = bonusPoints;
     if (box) await updateOpacity(box, true);
-
-    await updateOpacity(rightSideContainer, true);
 }
 
 // update theme
@@ -91,3 +88,26 @@ function openAccordion(accordion) {
 accordions.forEach(accordion => {
     accordion.addEventListener('click', () => openAccordion(accordion));
 });
+
+// Hide or show columns
+const columns = document.querySelectorAll('#content > div');
+
+function showColumn(event, column) {
+    // Check if the click was on actual column, not on its children
+    if (event.target !== column) return;
+
+    columns.forEach(col => {
+        if (col === column) return;
+
+        col.dataset.closed = 'true';
+    });
+
+    column.dataset.closed = column.dataset.closed === 'true' ? 'false' : 'true';
+}
+
+// Apply only to desktop
+if (window.innerWidth > 768) {
+    columns.forEach(column => {
+        column.addEventListener('click', (event) => showColumn(event, column));
+    });
+}
