@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap');
+@import url('style.dark.css');
 
 :root {
     --info-height: 40px;
@@ -45,6 +46,7 @@ body {
     align-items: center;
     flex-direction: column;
 
+    color: #000;
     transition: ease-in-out 0.3s;
 }
 
@@ -101,7 +103,7 @@ a {
 }
 
 #age {
-    color: #ffd9a4;
+    color: #3b3b3b;
 }
 
 button {
@@ -131,17 +133,17 @@ button a {
     text-decoration: none;
 
     border: none;
+    color: #fff;
+    font-weight: 400;
     border-radius: 10px;
     padding: 0 10px 0 10px;
-    background-color: rgb(101, 44, 255);
-    font-family: 'Geologica', sans-serif;
-    font-weight: 400;
+    background-color: #a4aaff;
     transition: ease-in 0.2s;
-    color: #fff;
+    font-family: 'Geologica', sans-serif;
 }
 
 .social:hover {
-    background-color: rgb(78, 31, 208);
+    background-color: #b5baff;
 }
 
 .social p {
@@ -181,6 +183,7 @@ button {
     justify-content: center;
     text-decoration: none;
     border: 1px solid #000;
+    background-color: rgb(185, 175, 255);
 
     border-radius: 10px;
     transition: ease-in 0.2s;
@@ -256,6 +259,10 @@ button {
     display: none;
     padding: 10px 0 10px 0;
     border-radius: 10px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-in-out;
 }
 
 .accordion-content > *:is(ol, ul) {
@@ -296,78 +303,6 @@ button {
     }
 }
 
-/* DARK THEME */
-body.dark {
-    background-color: #2f3136;
-}
-
-body.dark #box {
-    background-color: #fff;
-    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
-}
-
-body.dark #box p {
-    color: #000;
-}
-
-body.dark #content > *[data-closed="false"] {
-    color: #fff;
-}
-
-body.dark #content #age {
-    color: #ffd9a4;
-}
-
-body.dark #content>*[data-closed="true"] #age {
-    color: #2f3136;
-}
-
-body.dark .social p {
-    color: #fff;
-}
-
-body.dark a {
-    color: #fff;
-    text-decoration-color: #fff;
-}
-
-body.dark .project-card {
-    border: 1px solid #ffd9a4;
-}
-
-body.dark .project-card .description * {
-    background-color: #fffdcc;
-}
-
-body:not(.dark) .project-card {
-    background-color: rgb(185, 175, 255);
-}
-
-body.dark #socials .social img {
-    filter: invert();
-}
-
-body.dark .accordion {
-    color: #000;
-}
-
-body:not(.dark) .social {
-    background-color: rgb(185, 175, 255);
-}
-
-body:not(.dark) .social:hover {
-    background-color: rgb(132, 125, 189);
-}
-
-body:not(.dark) #content>* {
-    color: #000;
-}
-
-body:not(.dark) #age {
-    color: #3b3b3b;
-}
-
-/* MOBILE */
 @media screen and (max-width: 798px) {
     #projects {
         flex-direction: column;

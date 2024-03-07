@@ -75,14 +75,26 @@ const accordions = document.querySelectorAll('.accordion');
 
 function closeOtherAccordions(accordion) {
     accordions.forEach(acc => {
-        if (acc !== accordion)
+        if (acc !== accordion) {
+            const panel = accordion.children[1];
+            
             acc.classList.remove('active');
+            panel.style.maxHeight = null;
+        }
     });
 }
 
 function openAccordion(accordion) {
     closeOtherAccordions(accordion);
+
+    const panel = accordion.children[1];
     accordion.classList.toggle('active');
+    
+    console.log(panel, panel.style.maxHeight)
+    if (panel.style.maxHeight)
+        panel.style.maxHeight = null
+    else
+        panel.style.maxHeight = panel.scrollHeight + "px"
 }
 
 accordions.forEach(accordion => {
