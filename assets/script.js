@@ -27,7 +27,7 @@ smoothScrollLinks.forEach(link => {
 const switchTheme = document.getElementById('switch-theme');
 const theme = localStorage.getItem('theme');
 
-switchTheme.addEventListener('click', () => {
+switchTheme?.addEventListener('click', () => {
     if (theme === 'dark') {
         localStorage.setItem('theme', 'light');
     } else {
