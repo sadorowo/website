@@ -29,7 +29,7 @@ body#centered {
     align-content: center;
 }
 
-body>div {
+body>div:not([id]) {
     display: grid;
     overflow-y: auto;
     place-items: center;
@@ -37,13 +37,13 @@ body>div {
 
     float: left;
     height: 100%;
+    border: 1px solid;
     width: calc(100% / var(--columns));
 }
 
 body>div:first-child #arrow {
     bottom: 0;
     width: 100%;
-    height: 2em;
     display: none;
     cursor: pointer;
 
@@ -88,8 +88,16 @@ ol li::before {
     content: "✉ ";
 }
 
-#switch-theme {
+#switch_theme {
     color: blue;
     cursor: pointer;
     text-decoration: underline;
+}
+
+body>#arrows {
+    display: none;
+}
+
+body>#arrows>div {
+    padding: 0.5em;
 }

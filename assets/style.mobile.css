@@ -1,9 +1,25 @@
 @media screen and (max-width: 767px) {
-    body > div {
+    body>div {
         width: 100% !important;
     }
 
-    body > div:first-child #arrow {
-        display: block !important;
+    body>div>div#inner {
+        padding: 0.5em !important;
+    }
+
+    body>#arrows {
+        display: flex !important;
+        width: 100% !important;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+
+    body>#arrows>div {
+        width: 50%;
+        text-align: center;
+        background-color: black;
+        color: white;
+        cursor: pointer;
     }
 }

@@ -18,7 +18,7 @@ body.dark>div:first-child #arrow {
     background-color: #fff;
 }
 
-body > div:first-child #arrow {
+body>div:first-child #arrow {
     background-color: var(--color);
     color: var(--background-color);
 }
@@ -27,6 +27,11 @@ body.dark a {
     color: var(--color);
 }
 
-body.dark #switch-theme {
+body.dark #switch_theme {
     color: var(--color);
+}
+
+body.dark>#arrows>div {
+    background-color: var(--color);
+    color: var(--background-color);
 }

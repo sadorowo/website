@@ -3,11 +3,14 @@ if (typeof age !== 'undefined') {
     age.textContent = difference.toFixed(4);
 }
 
-if (typeof arrow !== 'undefined') {
-    arrow.addEventListener('click', () => {
-        window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: 'smooth'
+if (typeof arrow_top !== 'undefined' && typeof arrow_bottom !== 'undefined') {
+    [arrow_top, arrow_bottom].forEach(arrow => {
+        arrow.addEventListener('click', () => {
+            console.warn('scroll!')
+            window.scrollTo({
+                top: arrow === arrow_top ? 0 : document.body.scrollHeight,
+                behavior: 'smooth'
+            });
         });
     });
 }
@@ -24,10 +27,9 @@ smoothScrollLinks.forEach(link => {
     });
 });
 
-const switchTheme = document.getElementById('switch-theme');
 const theme = localStorage.getItem('theme');
 
-switchTheme?.addEventListener('click', () => {
+switch_theme?.addEventListener('click', () => {
     if (theme === 'dark') {
         localStorage.setItem('theme', 'light');
     } else {
