@@ -37,7 +37,6 @@ body>div:not([id]) {
 
     float: left;
     height: 100%;
-    border: 1px solid;
     width: calc(100% / var(--columns));
 }
 

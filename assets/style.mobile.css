@@ -1,6 +1,7 @@
 @media screen and (max-width: 767px) {
-    body>div {
+    body>div:not([id]) {
         width: 100% !important;
+        border-bottom: 1px solid;
     }
 
     body>div>div#inner {
