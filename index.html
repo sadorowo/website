@@ -4,168 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="sadorro's personal website!">
+    <meta name="description" content="hii">
 
-    <link rel="shortcut icon" href="logo.png">
-    <link rel="stylesheet" href="style.css">
-
-    <script defer src="script.js"></script>
-    <title>sador.me</title>
+    <link rel="shortcut icon" href="assets/logo.png">
+    <link rel="stylesheet" href="assets/style.css">
+    <script defer src="assets/script.js"></script>
+    <title>sador</title>
 </head>
 
 <body>
-    <div id="box">
-        <p>Kliknij mnie!</p>
-    </div>
-    <div id="content">
-        <p id="top-bar">Aby zamknąć bądź otworzyć daną kolumnę, kliknij w jej tło.</p>
-        <div data-closed="false">
-            <h1>Sador</h1>
-            <h2 id="points">Bonusowe punkty z minigry: <span>0</span></h2>
-            <button onclick="resetPoints()">Resetuj punkty</button>
-            <button onclick="toggleTheme()">Zmień motyw</button>
-            <button><a href="projects.html">Moje projekty</a></button>
-            <button id="swap">Odwróć strony :)</button>
-        </div>
-        <div data-closed="true">
-            <h4>Media społecznościowe/moje konta</h4>
-            <div id="socials">
-                <a class="social" href="https://github.com/sadorowo" target="_blank">
-                    <img src="icons/github.png" alt="github">
-                    <p>GitHub</p>
-                </a>
-                <a class="social" href="https://instagram.com/sadorowo" target="_blank">
-                    <img src="icons/instagram.png" alt="instagram">
-                    <p>Instagram</p>
-                </a>
-                <a class="social" href="https://youtube.com/c/Sadorowo" target="_blank">
-                    <img src="icons/youtube.png" alt="youtube">
-                    <p>YouTube</p>
-                </a>
-            </div>
+    <div>
+        <div id="inner">
+            <h1>sador</h1>
+            <p><span id="age">?</span> years old boy, who loves to code.</p>
 
-            <h4>O mnie</h4>
-            <p>hej, mam <span id="age">???</span> lat. mieszkam w okolicach Myślenic.</p>
-            <p>moje zainteresowania:</p>
+            <h2>my hobbies</h2>
             <ul>
-                <li>programowanie</li>
-                <li>stara motoryzacja</li>
-                <li>elektronika</li>
-                <li>muzyka</li>
+                <li>programming</li>
+                <li>music</li>
+                <li>old automotive</li>
             </ul>
-            <p>sprzęt/oprogramowanie, który posiadam:</p>
-            <div class="accordion">
-                <p>sprzęt</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>CPU: Intel i5-4590</li>
-                        <li>GPU: NVIDIA GTX 970 + Radeon RX 5500 XT</li>
-                        <li>Bluetooth: CSR 4.0</li>
-                        <li>Wi-Fi: TP-LINK TL-WN722N V2</li>
-                        <li>Klawiatura: Microsoft All-In-One Media Keyboard</li>
-                        <li>Mysz: coś z defendera :)</li>
-                        <li>Słuchawki: Beats Studio Buds</li>
-                        <li>Monitor: LG M2450D</li>
-                        <li>Płyta główna: ASRock H97M Pro4</li>
-                        <li>RAM: 16GB DDR3</li>
-                        <li>Dysk: ADATA 500GB</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>systemy operacyjne</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Hackintosh Sonoma</li>
-                        <li>Windows 10 Pro</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>oprogramowanie</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>DaVinci Resolve</li>
-                        <li>Firefox</li>
-                        <li>GIMP</li>
-                        <li>OBS Studio</li>
-                        <li>Handbrake</li>
-                        <li>VSC (only product from ms trash that I'm using LMAO)</li>
-                        <li>BitTorrent Web</li>
-                        <li>Apple Music</li>
-                        <li>JetBrains IDEs</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>subskrypcje</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Apple Music Individual</li>
-                    </ul>
-                </div>
-            </div>
-            <p>cenię sobie prywatność, nie korzystam m.in. z facebooka, wyszukiwarki google.</p>
+
+            <h2>my profiles</h2>
+            <ul>
+                <li><a href="https://github.com/sadorowo" target="_blank">github</a></li>
+                <li><a href="https://instagram.com/sadorowo" target="_blank">instagram</a></li>
+            </ul>
+
+            <h2>contact</h2>
+            <ul id="contact">
+                <li><a href="mailto:contact@sador.me">e-mail</a></li>
+            </ul>
+
+            <h3 id="sections">go to section:</h3>
+            <ul>
+                <li><a href="#projects">my projects</a></li>
+                <li><a href="#music-taste">my music taste</a></li>
+                <li><a href="#hardware">my hardware</a></li>
+                <li><a href="#software">my software</a></li>
+                <li><a href="#privacy">privacy</a></li>
+            </ul>
+
+            <h2><a href="#projects">go to top</a></h2>
+            <h2 id="switch-theme">switch theme</h2>
+            
+            <div id="arrow">▼</div>
         </div>
-        <div data-closed="true">
-            <p>jestem fanem/po prostu słucham:</p>
-            <div class="accordion">
-                <p>metalu</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>heavy metalu</li>
-                        <li>gothic metalu</li>
-                        <li>metalu progresywnego</li>
-                        <li>nu metalu</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>rocka</p>
-                <div class="accordion-content">
-                    <p>szczególnie:</p>
-                    <ul>
-                        <li>Foo Fighters</li>
-                        <li>Evanescence</li>
-                        <li>30 Seconds To Mars</li>
-                        <li>HIM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>części amerykańskiego rapu</p>
-                <div class="accordion-content">
-                    <p>szczególnie:</p>
-                    <ul>
+    </div>
+    <div>
+        <div id="inner">
+            <h2 id="projects">my projects</h2>
+            <ul>
+                <li>
+                    websites
+                    <ol>
+                        <li><a href="https://github.com/sadorowo/personal-website"
+                                target="_blank">sadorowo/personal-website</a></li>
+                        <li><a href="https://github.com/sadorowo/witch-website"
+                                target="_blank">sadorowo/witch-website</a>
+                        </li>
+                        <li><a href="https://github.com/sadorowo/draw" target="_blank">sadorowo/draw</a></li>
+                    </ol>
+                </li>
+                <li>
+                    projects
+                    <ol>
+                        <li><a href="https://github.com/sadorowo/dynamic-content-delivery"
+                                target="_blank">sadorowo/dynamic-content-delivery</a></li>
+                        <li><a href="https://github.com/sadorowo/dynamic-content-delivery-api"
+                                target="_blank">sadorowo/dynamic-content-delivery-api</a></li>
+                        <li data-deprecated><a href="https://github.com/sadorowo/dcd-legacy"
+                                target="_blank">sadorowo/dcd-legacy</a></li>
+                        <li><a href="https://github.com/sadorowo/wulkanowy-mod"
+                                target="_blank">sadorowo/wulkanowy-mod</a>
+                        </li>
+                        <li><a href="https://github.com/sadorowo/zine-v4" target="_blank">sadorowo/zine-v4</a></li>
+                    </ol>
+                </li>
+                <li>
+                    tools
+                    <ol>
+                        <li><a href="https://github.com/sadorowo/m3u-category-matcher"
+                                target="_blank">sadorowo/m3u-category-matcher</a>
+                        </li>
+                        <li><a href="https://github.com/sadorowo/m3u-logo-matcher"
+                                target="_blank">sadorowo/m3u-logo-matcher</a>
+                        </li>
+                        <li><a href="https://github.com/sadorowo/m3u-duplicates-filter"
+                                target="_blank">sadorowo/m3u-duplicates-filter</a></li>
+                    </ol>
+                </li>
+            </ul>
+
+            <h2 id="music-taste">my music taste</h2>
+            <p>i'm a fan of:</p>
+            <ul>
+                <li>
+                    genres
+                    <ol>
+                        <li>heavy metal</li>
+                        <li>black metal</li>
+                        <li>death metal</li>
+                        <li>doom metal</li>
+                        <li>hard rock</li>
+                    </ol>
+                </li>
+                <li>
+                    rock/metal bands/artists
+                    <ol>
+                        <li>Draconian</li>
+                        <li>Poisonblack</li>
+                        <li>To/Die/For</li>
+                        <li>For My Pain...</li>
+                        <li>Lacrimas Profundere</li>
+                        <li>Death</li>
+                        <li>Charon</li>
+                        <li>Entwine</li>
+                        <li>Beseech</li>
+                        <li>Slipknot</li>
+                    </ol>
+                </li>
+                <li>
+                    american rap (sometimes, very rarely)
+                    <ol>
                         <li>Lil Peep</li>
                         <li>Lil Tracy</li>
                         <li>XXXTENTACION</li>
                         <li>Juice WRLD</li>
                         <li>Mackned</li>
                         <li>Fat Nick</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="accordion">
-                <p>zespołów/artystów</p>
-                <div class="accordion-content">
-                    <ul>
-                        <li>Slipknot</li>
-                        <li>Poisonblack</li>
-                        <li>Beseech</li>
-                        <li>To/Die/For</li>
-                        <li>Entwine</li>
-                        <li>Lacrimas Profundere</li>
-                        <li>For My Pain...</li>
-                        <li>Draconian</li>
-                        <li>Charon</li>
-                        <li>Lil Peep</li>
-                        <li>Death</li>
-                        <li>System of a Down</li>
-                        <li>Evanescence</li>
-                    </ul>
-                </div>
-            </div>
+                    </ol>
+                </li>
+            </ul>
+
+            <p>i like these artists, but I can't say I'm a fan of them yet:</p>
+            <ul>
+                <li>Darkthrone</li>
+                <li>Dark Funeral</li>
+                <li>Behemoth</li>
+                <li>Venom</li>
+                <li>Deathstars</li>
+                <li>Carpatian Forest</li>
+                <li>Gorgoroth</li>
+                <li>Immortal</li>
+                <li>Emperor</li>
+                <li>Imminence</li>
+            </ul>
+
+            <h2 id="hardware">my hardware</h2>
+            <ul>
+                <li>
+                    OSes
+                    <ol>
+                        <li>windows 10</li>
+                        <li>macOS</li>
+                        <li>android (lineageos)</li>
+                    </ol>
+                </li>
+                <li>
+                    in general
+                    <ol>
+                        <li>cpu: intel i5-4590</li>
+                        <li>gpu: radeon rx 5500 xt</li>
+                        <li>bluetooth & wi-fi: fenvi t919</li>
+                        <li>keyboard: microsoft all-in-one media keyboard</li>
+                        <li>headphones: beats studio buds</li>
+                        <li>display: lg m2450d</li>
+                        <li>motherboard: asrock h97m pro4</li>
+                        <li>ram: 16gb ddr3</li>
+                        <li>ssd: adata 500gb</li>
+                    </ol>
+                </li>
+            </ul>
+
+            <h2 id="software">my software</h2>
+            <ul>
+                <li>
+                    recording/editing
+                    <ol>
+                        <li>obs studio</li>
+                        <li>quicktime player</li>
+                        <li>gimp</li>
+                        <li>davinci resolve</li>
+                        <li>handbrake</li>
+                    </ol>
+                </li>
+                <li>
+                    programming
+                    <ol>
+                        <li>xcode</li>
+                        <li>vs code</li>
+                        <li>intellij idea</li>
+                        <li>pycharm</li>
+                        <li>clion</li>
+                        <li>android studio</li>
+                        <li>webstorm</li>
+                        <li>termius</li>
+                        <li>postman</li>
+                        <li>git</li>
+                    </ol>
+                </li>
+                <li>
+                    internet
+                    <ol>
+                        <li>firefox</li>
+                        <li>bittorrent web</li>
+                    </ol>
+                </li>
+                <li>music - apple music individual</li>
+            </ul>
+
+            <h2 id="privacy">privacy</h2>
+            <p>i prefer to keep my privacy, so i don't use any social media, except for instagram. i also don't use any
+                of the big tech companies' services, like google, facebook, amazon, etc. i use apple products, because
+                they are the only ones that respect my privacy. i also use a vpn and a password manager.</p>
         </div>
     </div>
 </body>

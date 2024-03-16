@@ -1,0 +1,32 @@
+:root {
+    --font: 'Inconsolata', monospace;
+    --font-size: 16px;
+    --columns: 2;
+
+    --background-color: #171616;
+    --color: #fff;
+}
+
+body.dark {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+body.dark>div:first-child #arrow {
+    color: #000;
+    text-align: center;
+    background-color: #fff;
+}
+
+body > div:first-child #arrow {
+    background-color: var(--color);
+    color: var(--background-color);
+}
+
+body.dark a {
+    color: var(--color);
+}
+
+body.dark #switch-theme {
+    color: var(--color);
+}
