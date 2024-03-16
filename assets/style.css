@@ -96,7 +96,3 @@ ol li::before {
 body>#arrows {
     display: none;
 }
-
-body>#arrows>div {
-    padding: 0.5em;
-}

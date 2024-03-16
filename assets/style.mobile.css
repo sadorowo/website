@@ -4,6 +4,10 @@
         border-bottom: 1px solid;
     }
 
+    body>div>div#inner {
+        padding: 0.5em !important;
+    }
+    
     body>#arrows {
         display: flex !important;
         width: 100% !important;
