@@ -1,11 +1,15 @@
 @media screen and (max-width: 767px) {
     body>div:not([id]) {
+        height: unset !important;
         width: 100% !important;
         border-bottom: 1px solid;
     }
 
     body>div>div#inner {
-        padding: 0.5em !important;
+        overflow-y: hidden !important;
+        height: auto !important;
+        
+        padding: 1em !important;
     }
     
     body>#arrows {
