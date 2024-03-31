@@ -79,7 +79,7 @@ ol li::before {
 }
 
 *[data-deprecated]::after {
-    content: " (deprecated)";
+    content: ' (' attr(data-deprecated-entry, "deprecated") ')';
     color: red;
 }
 
