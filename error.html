@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="assets/logo.png">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>sador - something weird happened</title>
 </head>
 
-<body id="centered">
-    <h1 id="code">{{placeholder "http.error.status_code"}}</h1>
-    <p id="explanation">{{placeholder "http.error.message"}}.</p>
-    <a onclick="history.back()">go back</a>
+<body>
+    <div id="container">
+        <h1 id="code">{{placeholder "http.error.status_code"}}</h1>
+        <p id="explanation">{{placeholder "http.error.message"}}.</p>
+        <a onclick="history.back()">go back</a>
+    </div>
 </body>
 </html>
