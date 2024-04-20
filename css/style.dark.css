@@ -1,0 +1,12 @@
+body.dark {
+    color: var(--background) !important;
+    background-color: var(--color) !important;
+}
+
+body.dark input {
+    color: var(--background) !important;
+}
+
+body.dark #result, body.dark a {
+    color: var(--background) !important;
+}

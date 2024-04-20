@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('style.dark.css');
+
+:root {
+    --background: #fff;
+    --color: #000;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--color);
+    background-color: var(--background);
+    font-family: 'Inconsolata', sans-serif;
+    transition: background 0.3s ease-in-out;
+}
+
+#container {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    align-content: center;
+}
+
+[data-tooltip] {
+    text-decoration: underline;
+}
+
+[data-tooltip]:hover:after {
+    content: " (" attr(data-tooltip) ")";
+}
+
+a {
+    color: var(--color);
+}
+
+ul.vertical li {
+    display: inline-block;
+}
+
+ul.vertical li:not(:first-child)::before {
+    content: " - ";
+    font-weight: bold;
+}
+
+input, a, #result {
+    transition: background 0.3s ease-in-out;
+}
+
+input {
+    font-family: 'Inconsolata', sans-serif;
+    font-size: 150%;
+    outline: none;
+
+    border: none;
+    border-bottom: 1px solid;
+
+    color: var(--color);
+    background-color: transparent;
+}
+
+#result {
+    white-space: preserve;
+
+    background-color: transparent;
+    color: var(--color);
+
+    padding: 2em;
+    margin: 2em;
+}
+
+#switch_theme {
+    text-decoration: underline;
+    cursor: pointer;
+}
