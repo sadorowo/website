@@ -150,6 +150,26 @@ const COMMANDS = [
 
             return ''
         }
+    },
+    {
+        name: 'desktop',
+        description: 'Show some desktop screenshots',
+        usage: '',
+        usage_examples: [],
+        arguments: [],
+        output: () => {
+            let result = [];
+
+            for (let i = 0; i < 3;) {
+                result.push(`<img src="assets/desktop_screenshots/${++i}.png" alt="Desktop screenshot"/>`)
+            }
+
+            return `
+                <div class="image-grid">
+                    ${result.join('\n')}
+                </div>
+            `
+        }
     }
 ]
 
