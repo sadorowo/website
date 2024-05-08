@@ -22,11 +22,18 @@ body {
 }
 
 #container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
     height: 100%;
     width: 100%;
+}
 
-    align-content: center;
+#container > * {
+    width: 50%;
 }
 
 [data-tooltip] {
@@ -71,10 +78,11 @@ input {
     white-space: preserve;
     color: var(--color);
 
-    padding: 2em;
+    max-height: 100%;
+    overflow-y: auto;
 }
 
-#switch_theme {
+#switch_theme, #help {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -90,4 +98,10 @@ input {
 .image-grid > * {
     max-width: 50%;
     max-height: 50%;
+}
+
+@media screen and (max-width: 798px) {
+    #container {
+        flex-direction: column !important;
+    }
 }

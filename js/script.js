@@ -4,6 +4,36 @@ function updateAge() {
     age.textContent = difference.toFixed(4);
 }
 
+// process command function
+function processCommand() {
+    const [commandName, ...args] = command.value.split(' ') || [command.value]
+    const suppliedCommand = COMMANDS.find(c => c.name === commandName)
+
+    if (!suppliedCommand) {
+        result.textContent = 'invalid command';
+        return
+    }
+
+    const { arguments, output } = suppliedCommand;
+    for (const i in arguments) {
+        const argument = arguments[i]
+
+        if (argument.required && !args[i]) {
+            result.textContent = `argument ${argument.name} is missing`;
+            return
+        }
+
+        const errorMessage = argument.check(argument.multiword ? args.join(' ') : args[i])
+
+        if (typeof errorMessage === 'string') {
+            result.textContent = `error while executing ${suppliedCommand.name}: ${errorMessage}`;
+            return
+        }
+    }
+
+    result.innerHTML = output(...args).replaceAll(TAB, '')
+}
+
 // wrapper for setInterval
 const runEvery = (task, ms) => {
     task()
@@ -37,34 +67,7 @@ command?.addEventListener('focusout', () => {
 })
 
 command?.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-        const [commandName, ...args] = e.target.value.split(' ') || [e.target.value]
-        const command = COMMANDS.find(c => c.name === commandName)
-
-        if (!command) {
-            result.textContent = 'invalid command';
-            return
-        }
-
-        const { arguments, output } = command;
-        for (const i in arguments) {
-            const argument = arguments[i]
-
-            if (argument.required && !args[i]) {
-                result.textContent = `argument ${argument.name} is missing`;
-                return
-            }
-
-            const errorMessage = argument.check(argument.multiword ? args.join(' ') : args[i])
-
-            if (typeof errorMessage === 'string') {
-                result.textContent = `error while executing ${command.name}: ${errorMessage}`;
-                return
-            }
-        }
-
-        result.innerHTML = output(...args).replaceAll(TAB, '')
-    }
+    if (e.key === 'Enter') processCommand()
 })
 
 // run all tasks
@@ -75,3 +78,9 @@ command?.focus()
 const theme = localStorage.getItem('theme');
 if (theme === 'dark')
     document.body.classList.add('dark')
+
+// listen to help tooltip
+help.addEventListener('click', () => {
+    command.value = 'help';
+    processCommand();
+})
