@@ -96,7 +96,6 @@ const COMMANDS = [
             '',
             'bitwarden (self-hosted)',
             'libreoffice'
-        
         ].join('\n')
     },
     {

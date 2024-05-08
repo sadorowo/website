@@ -67,13 +67,11 @@ input {
 }
 
 #result {
-    white-space: preserve;
-
     background-color: transparent;
+    white-space: preserve;
     color: var(--color);
 
     padding: 2em;
-    margin: 2em;
 }
 
 #switch_theme {
