@@ -129,7 +129,7 @@ const COMMANDS = [
         name: 'curl',
         description: 'open website in new tab',
         usage: '<website>',
-        usage_examples: ['curl google.com'],
+        usage_examples: ['curl https://google.com'],
         arguments: [
             {
                 name: 'url',
@@ -138,7 +138,7 @@ const COMMANDS = [
                 multiword: true,
                 check: (url) => URL_REGEX.test(url)
                     ? null
-                    : "invalid URL"
+                    : "invalid URL or missing protocol"
             }
         ],
         output: (url) => {
