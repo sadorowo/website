@@ -15,10 +15,10 @@ const COMMANDS = [
             }
         ],
         output: (command) => !!command
-            ? getCommandHelp(command)
+            ? getCommandHelp(command.toLowerCase())
             : COMMANDS
-            .map(c => `${c.name}: ${c.description}`)
-            .join('\n')
+                .map(c => `${c.name}: ${c.description}`)
+                .join('\n')
     },
     {
         name: 'music',
@@ -31,7 +31,7 @@ const COMMANDS = [
                 description: 'music genre',
                 required: false,
                 multiword: true,
-                check: (genre) => !!genre && !Object.keys(MUSIC_METADATA).includes(genre)
+                check: (genre) => !!genre && !getGenre(genre)
                     ? "no informations about this music genre, run 'music' command to find available genres"
                     : null
             }
@@ -42,11 +42,14 @@ const COMMANDS = [
             return !!genre
                 ? getGenreHelp(genre)
                 : `
+                    if you want to get more info about specific genre, use <b>music [name/alias]</b>
                     i am listening to these music genres:
 
-                    ${Object.keys(MUSIC_METADATA)
-                        .map(genre => `${genre} - more info: 'music ${genre}'`)
-                        .join('\n')}
+                    ${MUSIC_METADATA
+                    .map(genre_data => !!genre_data.aliases?.length
+                        ? `${genre_data.name} (aliases: ${genre_data.aliases.join(', ')})`
+                        : genre_data.name)
+                    .join('\n')}
                 `
         }
     },
@@ -146,7 +149,7 @@ const COMMANDS = [
                 target: '_blank',
                 rel: 'noopener noreferrer',
                 href: url,
-              }).click();
+            }).click();
 
             return ''
         }
@@ -174,16 +177,22 @@ const COMMANDS = [
 ]
 
 function getGenreHelp(genreName) {
-    const genre = MUSIC_METADATA[genreName];
+    const genre = getGenre(genreName)
 
     if (!genre) return 'music: no informations about this music genre';
 
     return `
-        i enjoy listening to ${genreName}.
+        i enjoy listening to ${genre.name}.
         example ${genreName} artists/bands that i am listening to:
 
-        ${genre.join('\n')}
+        ${genre.artists.join('\n')}
     `
+}
+
+function getGenre(genreName) {
+    return MUSIC_METADATA.find(genre =>
+        genre.name === genreName ||
+        genre.aliases.includes(genreName));
 }
 
 function getCommandHelp(commandName) {

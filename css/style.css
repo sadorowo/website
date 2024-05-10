@@ -32,7 +32,7 @@ body {
     width: 100%;
 }
 
-#container > * {
+#container>* {
     width: 50%;
 }
 
@@ -57,7 +57,9 @@ ul.vertical li:not(:first-child)::before {
     font-weight: bold;
 }
 
-input, a, #result {
+input,
+a,
+#result {
     transition: background 0.3s ease-in-out;
 }
 
@@ -78,11 +80,13 @@ input {
     white-space: preserve;
     color: var(--color);
 
-    max-height: 100%;
+    height: 100%;
     overflow-y: auto;
+    align-content: center;
 }
 
-#switch_theme, #help {
+#switch_theme,
+#help {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -95,7 +99,7 @@ input {
     gap: 5px;
 }
 
-.image-grid > * {
+.image-grid>* {
     max-width: 50%;
     max-height: 50%;
 }
@@ -103,5 +107,9 @@ input {
 @media screen and (max-width: 798px) {
     #container {
         flex-direction: column !important;
+    }
+
+    #container>* {
+        width: 100%;
     }
 }

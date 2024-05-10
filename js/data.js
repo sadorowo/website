@@ -3,41 +3,64 @@ const URL_REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9(
 const LINKS = {
     'gitea': 'https://git.sador.me/sadorowo',
     'instagram': 'https://instagram.com/sadorowo',
-    'immich': 'https://photos.sador.me/',
+    'immich (self-hosted photo hosting)': 'https://photos.sador.me/',
     'email': 'mailto:contact@sador.me'
 }
 
-const MUSIC_METADATA = {
-    'heavy metal': [
-        'Poisonblack',
-        'Metallica'
-    ],
-    'gothic metal': [
-        'Draconian',
-        'Beseech',
-        'To/Die/For',
-        'For My Pain...',
-        'Charon',
-        'Entwine'
-    ],
-    'death suicidal black metal': [
-        'minuta agonii',
-        'Decalius'
-    ],
-    'black metal': [
-        'Behemoth',
-        'Venom',
-        'Mgła',
-        'Watain',
-        'Bathory',
-        'Carpathian Forest',
-        'Darkthrone'
-    ],
-    'nu metal': [
-        'Slipknot',
-        'Evanescence'
-    ],
-    'other genres': [
-        'Rammstein'
-    ]
-}
+const MUSIC_METADATA = [
+    {
+        name: 'heavy metal',
+        aliases: ['hm', 'heavy'],
+        artists: [
+            'Poisonblack',
+            'Metallica'
+        ]
+    },
+    {
+        name: 'gothic metal',
+        aliases: ['gm', 'goth', 'gothic'],
+        artists: [
+            'Draconian',
+            'Beseech',
+            'To/Die/For',
+            'For My Pain...',
+            'Entwine'
+        ]
+    },
+    {
+        name: 'depressive suicidal black metal',
+        aliases: ['dsbm'],
+        artists: [
+            'минута агонии',
+            'Decalius'
+        ]
+    },
+    {
+        name: 'black metal',
+        aliases: ['bm', 'black'],
+        artists: [
+            'Behemoth',
+            'Venom',
+            'Mgła',
+            'Watain',
+            'Bathory',
+            'Carpathian Forest',
+            'Darkthrone'
+        ]
+    },
+    {
+        name: 'nu metal',
+        aliases: ['nm', 'nu'],
+        artists: [
+            'Slipknot',
+            'Evanescence'
+        ]
+    },
+    {
+        name: 'other genres',
+        aliases: [],
+        artists: [
+            'Rammstein'
+        ]
+    }
+]
