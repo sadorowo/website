@@ -17,20 +17,11 @@ const MUSIC_METADATA = [
         ]
     },
     {
-        name: 'gothic metal',
-        aliases: ['gm', 'goth', 'gothic'],
-        artists: [
-            'Draconian',
-            'Beseech',
-            'To/Die/For',
-            'For My Pain...',
-            'Entwine'
-        ]
-    },
-    {
         name: 'depressive suicidal black metal',
         aliases: ['dsbm'],
         artists: [
+            'Totalselfhatred',
+            'Lifelover',
             'минута агонии',
             'Decalius'
         ]
@@ -45,22 +36,8 @@ const MUSIC_METADATA = [
             'Watain',
             'Bathory',
             'Carpathian Forest',
-            'Darkthrone'
-        ]
-    },
-    {
-        name: 'nu metal',
-        aliases: ['nm', 'nu'],
-        artists: [
-            'Slipknot',
-            'Evanescence'
-        ]
-    },
-    {
-        name: 'other genres',
-        aliases: [],
-        artists: [
-            'Rammstein'
+            'Darkthrone',
+            'Rotting Christ'
         ]
     }
 ]
