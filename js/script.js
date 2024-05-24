@@ -5,13 +5,13 @@ function updateAge() {
 }
 
 // process command function
-function processCommand() {
-    const [commandName, ...args] = command.value.split(' ') || [command.value]
+function processCommand(input) {
+    const [commandName, ...args] = input.split(' ') || [input]
     const suppliedCommand = COMMANDS.find(c => c.name === commandName)
 
     if (!suppliedCommand) {
-        result.textContent = 'invalid command';
-        return
+        result.textContent = '';
+        return;
     }
 
     const { arguments, output } = suppliedCommand;
@@ -66,9 +66,7 @@ command?.addEventListener('focusout', () => {
     setTimeout(() => command.focus(), 0);
 })
 
-command?.addEventListener('keydown', e => {
-    if (e.key === 'Enter') processCommand()
-})
+command?.addEventListener('input', () => processCommand(command.value))
 
 // run all tasks
 if (typeof age !== 'undefined') runEvery(updateAge, 10 * 1000)
@@ -82,7 +80,7 @@ if (theme === 'dark')
 // listen to help tooltip
 help.addEventListener('click', () => {
     command.value = 'help';
-    processCommand();
+    processCommand('help');
 })
 
 // ignore context menu
