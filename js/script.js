@@ -84,3 +84,6 @@ help.addEventListener('click', () => {
     command.value = 'help';
     processCommand();
 })
+
+// ignore context menu
+document.addEventListener('contextmenu', e => e.preventDefault());
