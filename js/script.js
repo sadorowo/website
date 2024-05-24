@@ -85,3 +85,6 @@ help.addEventListener('click', () => {
 
 // ignore context menu
 document.addEventListener('contextmenu', e => e.preventDefault());
+
+// check for command in input
+if (command?.value) processCommand(command.value);
