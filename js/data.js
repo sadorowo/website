@@ -4,7 +4,8 @@ const LINKS = {
     'gitea': 'https://git.sador.me/sadorowo',
     'instagram': 'https://instagram.com/sadorowo',
     'immich (self-hosted photo hosting)': 'https://photos.sador.me/',
-    'email': 'mailto:contact@sador.me'
+    'email': 'mailto:contact@sador.me',
+    'matrix': 'matrix.sador.me'
 }
 
 const MUSIC_METADATA = [
