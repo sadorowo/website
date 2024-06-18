@@ -1,11 +1,8 @@
-const URL_REGEX = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
-
 const LINKS = {
     'gitea': 'https://git.sador.me/sadorowo',
     'instagram': 'https://instagram.com/sadorowo',
-    'immich (self-hosted photo hosting)': 'https://photos.sador.me/',
+    'matrix': 'https://matrix.sador.me',
     'email': 'mailto:contact@sador.me',
-    'matrix': 'matrix.sador.me'
 }
 
 const MUSIC_METADATA = [

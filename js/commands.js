@@ -129,32 +129,6 @@ const COMMANDS = [
             .join('\n')
     },
     {
-        name: 'curl',
-        description: 'open website in new tab',
-        usage: '<website>',
-        usage_examples: ['curl https://google.com'],
-        arguments: [
-            {
-                name: 'url',
-                description: 'URL to open',
-                required: true,
-                multiword: true,
-                check: (url) => URL_REGEX.test(url)
-                    ? null
-                    : "invalid URL or missing protocol"
-            }
-        ],
-        output: (url) => {
-            Object.assign(document.createElement('a'), {
-                target: '_blank',
-                rel: 'noopener noreferrer',
-                href: url,
-            }).click();
-
-            return ''
-        }
-    },
-    {
         name: 'desktop',
         description: 'Show some desktop screenshots',
         usage: '',
