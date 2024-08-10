@@ -17,5 +17,17 @@ body.dark .tags > * {
 }
 
 body.dark #shadow {
-    box-shadow: 0 0 30em 10em rgba(255, 189, 184, 1);
+    box-shadow: 0 0 30em 10em rgb(161, 148, 147);
+}
+
+body.dark a {
+    color: var(--background);
+}
+
+body.dark #switch_theme {
+    border: 1px solid var(--background) !important;
+}
+
+body.dark #switch_theme > img {
+    filter: invert() !important;
 }
