@@ -11,3 +11,11 @@ body.dark #result,
 body.dark a {
     color: var(--background) !important;
 }
+
+body.dark .tags > * {
+    border: 2px solid var(--background);
+}
+
+body.dark #shadow {
+    box-shadow: 0 0 30em 10em rgba(255, 189, 184, 1);
+}

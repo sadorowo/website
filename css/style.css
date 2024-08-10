@@ -23,8 +23,8 @@ body {
 
 #container {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
 
     text-align: center;
@@ -32,82 +32,26 @@ body {
     width: 100%;
 }
 
-#container>* {
-    width: 50%;
+#shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 30em 10em rgb(114, 114, 114);
 }
 
-[data-tooltip] {
-    text-decoration: underline;
-}
-
-[data-tooltip]:hover:after {
-    content: " (" attr(data-tooltip) ")";
-}
-
-a {
-    color: var(--color);
-}
-
-ul.vertical li {
-    display: inline-block;
-}
-
-ul.vertical li:not(:first-child)::before {
-    content: " - ";
-    font-weight: bold;
-}
-
-input,
-a,
-#result {
-    transition: background 0.3s ease-in-out;
-}
-
-input {
-    font-family: 'Inconsolata', sans-serif;
-    font-size: 150%;
-    outline: none;
-
-    border: none;
-    border-bottom: 1px solid;
-
-    color: var(--color);
-    background-color: transparent;
-}
-
-#result {
-    background-color: transparent;
-    white-space: preserve;
-    color: var(--color);
-
-    height: 100%;
-    overflow-y: auto;
-    align-content: center;
-}
-
-#switch_theme,
-#help {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.image-grid {
+.tags {
+    gap: 5px;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    justify-content: center;
 }
 
-.image-grid>* {
-    max-width: 100%;
-    max-height: 50%;
+.tags > * {
+    border: 2px solid var(--color);
+    padding: 10px 20px 10px 20px;
 }
 
-@media screen and (max-width: 798px) {
-    #container {
-        flex-direction: column !important;
-    }
-
-    #container>* {
-        width: 100%;
-    }
+#switch_theme {
+    cursor: pointer;
+    text-decoration: underline;
 }
