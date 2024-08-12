@@ -24,10 +24,10 @@ body {
 }
 
 #shadow {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    box-shadow: 0 0 30em 10em rgb(114, 114, 114);
+    box-shadow: 0 0 100vw 5em rgb(114, 114, 114);
 }
 
 .tags {
