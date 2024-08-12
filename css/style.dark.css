@@ -17,7 +17,7 @@ body.dark .tags > * {
 }
 
 body.dark #shadow {
-    box-shadow: 0 0 30em 10em rgb(161, 148, 147);
+    box-shadow: 0 0 100vw 5em rgb(161, 148, 147);
 }
 
 body.dark a {
